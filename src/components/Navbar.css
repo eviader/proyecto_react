@@ -1,0 +1,30 @@
+.nav-barra{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    background-color: #353739;
+    width: 100%;
+    height: 100px;
+}
+
+.img-logo, .carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+a{
+    color: white !important;
+    text-decoration: none;
+}
+
+#logo{
+    width: 90px;
+    height: 90px;
+}
+

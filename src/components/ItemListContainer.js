@@ -1,9 +1,14 @@
 import './ItemListContainer.css';
+import React, { Fragment } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/js/bootstrap.min.js'
 
-function ItemListContainer() {
+function ItemListContainer(props) {
     return(
-        <h2>En desarrlo</h2>
-    );
+      <Fragment>
+        <h2>{props.saludo}</h2>
+      </Fragment>
+      );
   }
   
 

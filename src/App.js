@@ -7,8 +7,8 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <div className="App">
-    <Navbar/>
-    <ItemListContainer saludo= "Productos en desarollo..."/>
+    <Navbar />
+    <ItemListContainer />
     </div>
   );
 }

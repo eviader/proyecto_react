@@ -1,9 +1,9 @@
 import './CartWidget.css';
-import carrito from './img/carros.png';
+import carrito from './assets/carros.png';
 
 function CartWidget() {
     return (
-        <div class="carrito">
+        <div className="carrito">
         <img id="carrito" src={carrito} alt=""></img>
         </div> 
     );

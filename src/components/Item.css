@@ -1,0 +1,14 @@
+.card{
+    text-align: center;
+    align-items: center;
+    border: 2px lightslategray solid !important;
+    height: 34%;
+    width: auto;
+    background-color: white !important;
+    color: black;
+}
+
+#img1{
+    height: 20%;
+    width: auto;
+}

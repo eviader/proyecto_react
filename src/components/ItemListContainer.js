@@ -1,15 +1,25 @@
 import './ItemListContainer.css';
 import ItemList from './ItemList'
-import React, { Fragment } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { useState, useEffect } from 'react';
+
 
 
 function ItemListContainer() {
-    return(
+
+  const [productos, setProductos] = useState([]);
+
+  useEffect(()=>{
+    fetch('https://www.breakingbadapi.com/api/characters')
+    .then((resp) => resp.json())
+    .then((data) => setProductos(data))
+  }, []);
+
+
+  return(
       <>
-        <ItemList/>
+        <ItemList items={productos}/>
       </>
-      );
+  );
   }
   
 

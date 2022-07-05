@@ -1,29 +1,16 @@
-import { useEffect, useState } from "react";
 import Item from "./Item"
 
-
-
-
-function ItemList(){
-
-    const [productos, setProductos] = useState([])
-
-    useEffect(()=>{
-        fetch('data.json')
-        .then((resp) => resp.json())
-        .then((data) => setProductos(data))
-    }, []);
+function ItemList(props){
 
     return(
         <div className='container'>
             <div className='row'>
                 {   
-                    productos.map(producto  => (
-                        <div className='col-md-3' key={producto.id}>
-                            <Item marca={producto.marca} modelo={producto.modelo} precio={producto.precio} imagen={producto.img}/>
+                    props.items.map(producto => (
+                        <div className='col-md-3' key={producto.char_id}>
+                            <Item card={producto.name} modelo={producto.birthday} precio={producto.char_id} />
                         </div> 
-                    ))
-                }
+                    ))}
             </div>
         </div>
         );

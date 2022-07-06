@@ -1,16 +1,19 @@
 import './Item.css'
 import { Link } from 'react-router-dom'
 
+
 function Item(props){
+
     //const productosImagen = require.context('./assets/imgArt', true);
+
     return(
         <>
-            <div className='card'>
-                <h6 className='card-title'>{props.name}</h6> 
-                <h5 className='card-text text-secundary'>{props.birthday}</h5>
-                <Link to={`/detail/${props.char_id}`} ></Link>
-                <p>{props.char_id}</p>
-                <button type="button" className="btn btn-secondary">Agregar al carrito</button>
+            <div className='card-id'>
+                <h4>{props.card}</h4> 
+                <img className='img-url' src= {`${props.img}`} ></img>
+                <h5>{props.modelo}</h5>
+                <p>{props.precio}</p>
+                <Link to={`/detail/${props.precio}`}><button type="button" className="btn btn-secondary">Ver mas</button></Link>
             </div>  
         </>
     );

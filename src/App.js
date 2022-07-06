@@ -10,9 +10,10 @@ function App() {
   return (
     <div>
       <Navbar />
-      <ItemListContainer />
       <Routes>
-        <Route path='detail/:id' element={<Detail />}></Route>
+        <Route exact path='/' element={<ItemListContainer />}></Route>
+        <Route exact path='/inicio' element={<ItemListContainer />}></Route>
+        <Route exact path='/detail/:id' element={<Detail />}></Route>
       </Routes>
     </div>
   );

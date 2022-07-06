@@ -1,24 +1,24 @@
 import './ItemListContainer.css';
 import ItemList from './ItemList'
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 
 
 function ItemListContainer() {
 
-  const [productos, setProductos] = useState([]);
+  const [item, setItem] = useState([])
 
   useEffect(()=>{
-    fetch('https://www.breakingbadapi.com/api/characters')
+    fetch('https://breakingbadapi.com/api/characters')
     .then((resp) => resp.json())
-    .then((data) => setProductos(data))
+    .then((data) => setItem(data))
   }, []);
 
-
   return(
-      <>
-        <ItemList items={productos}/>
-      </>
+      <div>
+        <ItemList items={item}/>
+      </div>
   );
   }
   

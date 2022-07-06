@@ -1,15 +1,17 @@
-.card{
+.card-id{
     text-align: center;
     align-items: center;
     border: 2px lightslategray solid !important;
-    height: 36%;
-    width: auto;
+    margin-bottom: 10px;
+    height: 450px;
+    width: 100%;
     background-color: white !important;
     color: black;
+
 }
 
-#img{
-    height: 60%;
+.img-url{
+    height: 65%;
     width: auto;
 }
 

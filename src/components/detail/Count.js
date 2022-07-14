@@ -4,20 +4,18 @@ import { useState } from 'react'
 
 function Count(props){
 
-    const id =  props.id;
     const [button, setButton] = useState(true);
-
+    
     const buttonHandler = () => {
         setButton(false)
-        const newDate = {
-            nombre: id !== 0  && id[0].name,
-            id : id !== 0  && id[0].char_id
-        }
+        props.itemFunction();
     }
     
     return(
         <>
             {button && <button onClick={buttonHandler} type="button" className="btn btn-secondary">Agregar a Carrito</button>}
+            {!button && <h2>Se agrego correctamente al carrito</h2>}
+            {!button && <button  type="button" className="btn btn-secondary">Ver carrito</button>}
         </>
     );
 }

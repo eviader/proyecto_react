@@ -1,7 +1,7 @@
 import logo from './assets/logo.png';
 import './Navbar.css';
-import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom'
+import CartWidget from './card-widget/CartWidget';
 
 
 function Navbar() {
@@ -18,7 +18,7 @@ function Navbar() {
               <a className="nav-link active" aria-current="page" href="#">Contactanos</a>
             </div>
             <div className="carrito">
-              <CartWidget/>
+              <Link to='/items-carrito'><a className="nav-link active" aria-current="page" href="#"><CartWidget /></a></Link>
             </div> 
         </nav>
     </div>

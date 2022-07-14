@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
 import "../detail/Detail.css"
+import Count from "./Count"
+
 
 function Detail(){
+
+    
+
 
     const params = useParams()
     const [id, setId] = useState([])
@@ -12,6 +17,7 @@ function Detail(){
         .then((resp) => resp.json())
         .then((data) => setId(data))
     }, []);
+
 
     return(
         <div className="containers">
@@ -24,6 +30,9 @@ function Detail(){
                 {id.length !==0 && <h5> Ocupación: {id[0].occupation}</h5>}
                 {id.length !==0 && <h5> Apodo: {id[0].nickname}</h5>}
                 {id.length !==0 && <h5> Actor: {id[0].portrayed}</h5>}
+            <div>
+                <Count id={id}/>
+            </div>
 
             </div>
         </div>  

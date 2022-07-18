@@ -1,1 +1,26 @@
 
+.pop-cart{
+    position: absolute;
+    margin: 23vh;
+    height: 30vh;
+    width: 30vh;
+    background-color: white;
+    border: solid 2px black;
+}
+
+.contador-carrito{
+    border: 2px solid grey;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn-contador{
+    display: flex;
+    flex-direction: row;
+    margin: 0px 0px 2px 28px;
+    
+}
+
+.num-contador{
+    margin: 5px;
+}

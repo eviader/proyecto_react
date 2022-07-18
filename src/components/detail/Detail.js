@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
+import { CartContext } from "../context/CartContext";
 import "../detail/Detail.css"
 import Count from "./Count"
 
 
 function Detail(){
 
-    const params = useParams()
-    const [id, setId] = useState([])
-    const [itemSave, setItemSave] = useState([])
-
-    console.log(itemSave)
+    
+    const params = useParams();
+    const [id, setId] = useState([]);
+ 
 
     useEffect(()=>{
         fetch(`https://www.breakingbadapi.com/api/characters/${params.id}`)
@@ -18,14 +18,6 @@ function Detail(){
         .then((data) => setId(data))
     }, []);
 
-    
-    const newDateFunction = () => {
-        const newDate = {
-            nombre: id !== 0  && id[0].name,
-            id : id !== 0  && id[0].char_id
-        }
-        setItemSave(newDate);
-    }
 
     return(
         <div className="containers">
@@ -39,12 +31,11 @@ function Detail(){
                 {id.length !==0 && <h5> Apodo: {id[0].nickname}</h5>}
                 {id.length !==0 && <h5> Actor: {id[0].portrayed}</h5>}
             <div>
-                <Count item={itemSave} itemFunction={newDateFunction}/>
+                <Count />
             </div>
 
             </div>
         </div>  
-
     );
 }
 

@@ -1,0 +1,22 @@
+.cart{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0px;
+    padding: 0px;
+    
+}
+.cart-id{
+    text-align: start;
+    width: 100%;
+    height: auto;
+    margin: 10px
+}
+
+.cart-num{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin: 10px;
+    color: #000;;
+}

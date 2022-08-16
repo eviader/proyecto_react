@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from 'react-router-dom'
-import { CartContext } from "../context/CartContext";
 import "../detail/Detail.css"
 import Count from "./Count"
 
@@ -10,7 +9,6 @@ function Detail(){
     
     const params = useParams();
     const [id, setId] = useState([]);
- 
 
     useEffect(()=>{
         fetch(`https://www.breakingbadapi.com/api/characters/${params.id}`)
@@ -18,6 +16,13 @@ function Detail(){
         .then((data) => setId(data))
     }, []);
 
+    
+    const NewItemCar = { 
+                        id: id.length !==0 && id[0].char_id,
+                        nombre: id.length !==0 && id[0].name,
+                        apodo: id.length !==0 && id[0].portrayer,
+                        nacimiento: id.length !==0 && id[0].birthday
+                    }
 
     return(
         <div className="containers">
@@ -31,7 +36,7 @@ function Detail(){
                 {id.length !==0 && <h5> Apodo: {id[0].nickname}</h5>}
                 {id.length !==0 && <h5> Actor: {id[0].portrayed}</h5>}
             <div>
-                <Count />
+                <Count newItem={NewItemCar} />
             </div>
 
             </div>
